@@ -24,10 +24,6 @@ imshow(paddedImage);
 
 splitImage = mat2cell( paddedImage, 8 * ones(1,ceil(size(paddedImage,1)/8)), 8 * ones(1,ceil(size(paddedImage,2)/8)) );
 
-test = dct2(cell2mat(splitImage(1)));
-test2 = round(c8 * double(cell2mat(splitImage(1))) * transpose(c8));
-test3 = double(cell2mat(splitImage(1)));
-
 dctBlocks = cellfun(@(x) round(c8 * double(x) * c8Trans), splitImage, 'UniformOutput', false);
 
 scalingFactor = 1;
